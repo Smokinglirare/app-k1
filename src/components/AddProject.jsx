@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useProjectsContext } from '../context/ProjectsContext'
+import { ProjectsContext, useProjectsContext } from '../context/ProjectsContext'
 
 let nextId = 1;
 
 function AddProject() {
     const [text, setText] = useState("");
-    const {setProjects} = useProjectsContext();
+    const { projects, setProjects} = useProjectsContext();
 
   return (
     <div>
@@ -16,10 +16,14 @@ function AddProject() {
       />
        <button
         onClick={() => {
-          setProjects({
+          setProjects(
+            [ ...projects,
+            {
             text: text,
             id: nextId++,
-          });
+          }
+        ]
+          );
           setText("");
         }}
       >
