@@ -1,5 +1,5 @@
 import './App.css';
-import AddProject from './components/AddProject';
+
 import ProjectsList from './pages/ProjectsList';
 import Navbar from './components/Navbar';
 import Modal from './components/Modal';

@@ -30,7 +30,7 @@ function Modal({open, close}) {
         onClick={() => {
           createProject();
           setName("")
-          window.location.reload()
+          close()
         }}
       >
         <HiDocumentAdd />

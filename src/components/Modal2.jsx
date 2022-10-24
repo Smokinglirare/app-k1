@@ -11,8 +11,6 @@ function Modal2({open, close}) {
     const [selectedProject, setSelectedProject] = useState("")
     const {   projects, name, setName} = useProjectsContext();
     if(!open) return null;
-    
-  console.log(selectedProject)
 
   const createTask = () => {
     axios.post("http://localhost:3000/tasks", {
@@ -52,7 +50,7 @@ function Modal2({open, close}) {
           createTask();
           setName("")
           setSelectedProject();
-          window.location.reload()
+          close()
         }}
       >
         <HiDocumentAdd />

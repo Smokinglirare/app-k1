@@ -3,7 +3,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 export const ProjectsContext = createContext();
 
-export function ProjectsProvider({ children }, setSelectedProject ) {
+export function ProjectsProvider({ children }) {
     const [name, setName] = useState("")
     const [projects, setProjects] = useState([]);
     const [tasks, setTasks] = useState([]);
@@ -29,15 +29,9 @@ export function ProjectsProvider({ children }, setSelectedProject ) {
         });
       };
 
-      const createTask = () => {
-        axios.post("http://localhost:3000/tasks", {
-            name: name,
-            projectId: setSelectedProject,
-            id: uuidv4(),
-        });
-      };
+      
 
-      console.log(setSelectedProject)
+    
 
     const providerValue = {
         projects,
@@ -48,7 +42,7 @@ export function ProjectsProvider({ children }, setSelectedProject ) {
         createProject,
         tasks,
         getTasks,
-        createTask
+       
     }
 
     return (

@@ -18,9 +18,9 @@ function ProjectsList() {
 
     useEffect(() => {
       getProjects();
-    }, []);
+    }, );
 
-   console.log(projects)
+   
 
   return (
     <div>
