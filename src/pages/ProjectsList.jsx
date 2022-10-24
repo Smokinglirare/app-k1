@@ -20,7 +20,7 @@ function ProjectsList() {
       getProjects();
     }, []);
 
-   
+   console.log(projects)
 
   return (
     <div>
