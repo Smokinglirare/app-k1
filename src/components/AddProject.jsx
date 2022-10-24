@@ -1,30 +1,25 @@
 import React, { useState } from 'react'
-import { ProjectsContext, useProjectsContext } from '../context/ProjectsContext'
+import { useProjectsContext } from '../context/ProjectsContext'
+import axios from "axios";
 
-let nextId = 1;
 
 function AddProject() {
-    const [text, setText] = useState("");
-    const { projects, setProjects} = useProjectsContext();
+    const { name, setName } = useProjectsContext();
+    const { projects, setProjects, createProject, getProjects} = useProjectsContext();
+    
 
   return (
     <div>
         <input 
         placeholder="Project"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
        <button
         onClick={() => {
-          setProjects(
-            [ ...projects,
-            {
-            text: text,
-            id: nextId++,
-          }
-        ]
-          );
-          setText("");
+          createProject();
+          setName("")
+          window.location.reload()
         }}
       >
         Lägg till

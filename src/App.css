@@ -1,3 +1,19 @@
+:root {
+  --border-size: 0.125rem;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-family: monospace;
+  --color-primary: white;
+  --color-secondary: black;
+  --color-tertiary: dodgerblue;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --space: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -39,4 +55,8 @@
 
 li{
   list-style-type: none;
+}
+
+button{
+  z-index: -1;
 }
