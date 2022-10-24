@@ -6,7 +6,7 @@ import { FaWindowClose} from "react-icons/fa"
 
 function Modal({open, close}) {
     const { name, setName } = useProjectsContext();
-    const { projects, setProjects, createProject, getProjects} = useProjectsContext();
+    const {  createProject, getProjects} = useProjectsContext();
     if(!open) return null;
    
   return (
