@@ -7,7 +7,7 @@ export function ProjectsProvider({ children }) {
     const [name, setName] = useState("")
     const [projects, setProjects] = useState([]);
     const [tasks, setTasks] = useState([]);
-   
+    const [timeLogs, setTimeLogs] = useState([]);
    
 
     const getProjects = async () => {
@@ -21,6 +21,11 @@ export function ProjectsProvider({ children }) {
         setTasks(data);
         
       };
+
+      const getTimeLogs = async () => {
+        const {data} = await axios.get("http://localhost:3000/timelogs");
+        setTimeLogs(data)
+      }
 
       const createProject = () => {
         axios.post("http://localhost:3000/projects", {
@@ -42,6 +47,8 @@ export function ProjectsProvider({ children }) {
         createProject,
         tasks,
         getTasks,
+        timeLogs,
+        getTimeLogs
        
     }
 

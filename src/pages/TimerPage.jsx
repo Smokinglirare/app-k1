@@ -13,6 +13,19 @@ function TimerPage() {
     const [diff, setDiff] = useState("00:00:00");
     const [timer, setTimer] = useState();
 
+    const timerFunction = () => {
+      setStartDate(new Date());
+          const timer = setInterval(() => {
+            let start = moment(startDate);
+            let end = moment(new Date());
+            let diff = end.diff(start);
+            let f = moment.utc(diff).format("HH:mm:ss.SSS");
+            setDiff(f);
+            
+          }, 1000);
+          setTimer(timer);
+    }
+
     const createTimer = () => {
         axios.post("http://localhost:3000/timelogs", {
             id: uuidv4(),
@@ -25,6 +38,8 @@ function TimerPage() {
     
 console.log(startDate);
 console.log(selectedTask)
+
+
   return (
     <div>
         <select  onChange={(e) => setSelectedTask(e.target.value)}>
@@ -32,20 +47,11 @@ console.log(selectedTask)
             {tasks.map((task) => (
               <option key={task.id} value={task.id}>{task.name}</option>
             ))}
-          </select>
-    <button
-        onClick={() => {
-          setStartDate(new Date());
-          const timer = setInterval(() => {
-            let start = moment(startDate);
-            let end = moment(new Date());
-            let diff = end.diff(start);
-            let f = moment.utc(diff).format("HH:mm:ss.SSS");
-            setDiff(f);
             
-          }, 1000);
-          setTimer(timer);
-        }}
+          </select>
+          <p>{selectedTask}</p>
+    <button
+        onClick={() => {timerFunction()}}
       >
         start
       </button>
