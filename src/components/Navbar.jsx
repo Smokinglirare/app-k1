@@ -10,9 +10,9 @@ import TimerPage from '../pages/TimerPage'
 function Navbar() {
   return (
     <div className={styles.navbarContainer}>
-<button><Link to="/calender" element={<Calender />}><SlCalender /></Link></button>
-<button><Link to="/" element={<ProjectsList />}><SlHome /></Link></button>
-<button><Link to="/timerPage" element={<TimerPage />}><BiTime /></Link></button>
+<a><Link to="/calender" element={<Calender />}><SlCalender /></Link></a>
+<a><Link to="/" element={<ProjectsList />}><SlHome /></Link></a>
+<a><Link to="/timerPage" element={<TimerPage />}><BiTime /></Link></a>
 
     </div>
   )

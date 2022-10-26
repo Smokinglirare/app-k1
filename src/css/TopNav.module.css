@@ -1,12 +1,27 @@
+@font-face {
+    font-family:serrona ;
+    src: local('serrona'), url(../fonts/Serrona\ Sans\ -\ Regular.ttf)
+}
+
+
 .topNavContainer {
     display: grid;
     grid-template-columns: 50% 50%;
+    background-color: #BBC4EB;
 }
 
 .projects {
-    background-color: green;
+    
 }
 
 .tasks {
-background-color: red;
+   
+}
+
+.topNavButton {
+    text-decoration: none;
+    color: #222;
+    font-family:serrona ;
+    font-size: 30px;
+   
 }

@@ -3,6 +3,8 @@ import { useProjectsContext } from '../context/ProjectsContext'
 import axios from 'axios';
 import Modal2 from '../components/Modal2';
 import TopNav from '../components/TopNav';
+import styles from "../css/TaskList.module.css"
+import {IoMdDoneAll} from "react-icons/io"
 
 function TasksList() {
 
@@ -25,19 +27,18 @@ function TasksList() {
    
 
   return (
-    <div>
+    <div className={styles.tasksListContainer}>
       <TopNav />
    <ul>
       {tasks.map((task) => (
-        <li key={task.id}>
-           {task.name}  <button onClick={() => deleteTask(task.id)}>delete</button> 
-           <button>Finish</button>
+        <li className={styles.tasksList} key={task.id}>
+           {task.name}  <a className={styles.doneButton} onClick={() => deleteTask(task.id)}> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <IoMdDoneAll /></span></a> 
         
            
         </li>
       ))}
       </ul>
-      <button onClick={() => setOpenModal(!openModal)}>Add Task</button>
+      <a className={styles.button1} onClick={() => setOpenModal(!openModal)}>Add Task</a>
       <Modal2 open={openModal} close={() => setOpenModal(!openModal)} />
     </div>
   )

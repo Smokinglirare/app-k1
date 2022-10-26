@@ -8,14 +8,23 @@
   --color-tertiary: dodgerblue;
   --shadow: rgba(0, 0, 0, 0.1);
   --space: 1rem;
+  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+  --gray: #34495e;
+  --darkgray: #2c3e50;
 }
 
 * {
   box-sizing: border-box;
+  
+}
+
+.body{
+  background-color: #737CCF;
 }
 
 .App {
   text-align: center;
+  
 }
 
 .App-logo {

@@ -24,14 +24,10 @@ function Modal2({open, close}) {
     <div className={styles.overlay}>
         
         <div className={styles.modalContainer}>
-        
+          
         <div className={styles.inputGroup}>
-        <select  onChange={(e) => setSelectedProject(e.target.value)}>
-        <option selected disabled>Projects</option>
-            {projects.map((project) => (
-              <option key={project.id} value={project.id}>{project.name}</option>
-            ))}
-          </select>
+          
+        
         <input 
         type="text"
         required=""
@@ -64,6 +60,14 @@ function Modal2({open, close}) {
         
 
         </div>
+        <div className={styles.select}>
+        <select  onChange={(e) => setSelectedProject(e.target.value)}>
+        <option selected disabled>Projects</option>
+            {projects.map((project) => (
+              <option key={project.id} value={project.id}>{project.name}</option>
+            ))}
+          </select>
+          </div>
     </div>
   )
 }

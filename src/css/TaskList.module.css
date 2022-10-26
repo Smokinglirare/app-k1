@@ -1,0 +1,60 @@
+@font-face {
+    font-family:traveler ;
+    src: local('traveler'), url(../fonts/Traveler.ttf)
+}
+
+
+
+.tasksListContainer {
+    background-color: #737CCF;
+    height: 100vh;
+}
+
+.tasksList {
+    font-size: 40px;
+    padding:5px;
+    font-family:traveler;
+    color: #fff;
+}
+
+.doneButton {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: red;
+    font-size: 20px;
+}
+
+/* button */
+
+.button1 {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+    width: 40%;
+}
+
+.button1:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+@media all and (max-width:30em) {
+    .button1 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}

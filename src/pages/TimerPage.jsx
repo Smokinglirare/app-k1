@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import moment from "moment";
 import { useProjectsContext } from '../context/ProjectsContext';
-
+import styles from "../css/TimerPage.module.css"
 import axios from "axios"
 import { v4 as uuidv4 } from 'uuid';
+import {FaPlay, FaStop} from "react-icons/fa"
 
 function TimerPage() {
     const { tasks, getTasks } = useProjectsContext();
@@ -39,7 +40,8 @@ function TimerPage() {
       }, []);
 
   return (
-    <div>
+    <div className={styles.timerPageContainer}>
+      <div className={styles.select}>
         <select  onChange={(e) => setSelectedTask(e.target.value)}>
         <option selected disabled>Tasks</option>
             {tasks.map((task) => (
@@ -47,19 +49,20 @@ function TimerPage() {
             ))}
             
           </select>
-          <p>{selectedTask}</p>
-    <button
-        onClick={() => {timerFunction()}}
-      >
-        start
-      </button>
-      <button onClick={() => {
+          </div>
+          <div className={styles.bottomSide}>
+          <h1>{diff}</h1>
+    <a onClick={() => {timerFunction()}}>
+        <FaPlay />
+      </a>
+      <a onClick={() => {
         createTimer();
         clearInterval(timer)
         setDiff("00:00:00")
         setStartDate(new Date());
-        }}>stop</button>
-      <p>{diff}</p>
+        }}><FaStop /></a>
+        
+     </div>
     </div>
   )
 }

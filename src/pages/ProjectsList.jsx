@@ -3,6 +3,8 @@ import { useProjectsContext } from '../context/ProjectsContext'
 import axios from 'axios';
 import Modal from '../components/Modal';
 import TopNav from '../components/TopNav';
+import styles from "../css/ProjectsList.module.css"
+import {IoMdDoneAll} from "react-icons/io"
 
 function ProjectsList() {
 
@@ -23,19 +25,19 @@ function ProjectsList() {
    
 
   return (
-    <div>
+    <div className={styles.projectsListContainer}>
    <TopNav />
    <ul>
       {projects.map((project) => (
-        <li key={project.id}>
-           {project.name}  <button onClick={() => deleteProject(project.id)}>delete</button> 
-           <button>Finish</button>
+        <li className={styles.projectsList} key={project.id}>
+           {project.name}  <button className={styles.doneButton} onClick={() => deleteProject(project.id)}> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <IoMdDoneAll /></span></button> 
+           
            
            
         </li>
       ))}
       </ul>
-      <button onClick={() => setOpenModal(!openModal)}>Add Project</button>
+      <a className={styles.button1} onClick={() => setOpenModal(!openModal)}>Add Project</a>
       <Modal open={openModal} close={() => setOpenModal(!openModal)} />
     </div>
   )

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { useProjectsContext } from '../context/ProjectsContext';
 import moment from "moment";
 import axios from "axios";
+import styles from "../css/Calender.module.css"
+import {IoMdDoneAll} from "react-icons/io"
 
 function Calender() {
 
@@ -29,13 +31,10 @@ useEffect(() => {
   getTasks();
 }, []);
 
-const sameId = Object.is(timeLogs.start, tasks.id);
-
-
   return (
-    <div>
+    <div className={styles.calenderContainer}>
 
-
+<div className={styles.select}>
 <select  onChange={(e) => setSelectedDate(e.target.value)}>
         <option selected disabled>Dates</option>
             {uniqueTaskDate.map((timeLog) => (
@@ -43,14 +42,14 @@ const sameId = Object.is(timeLogs.start, tasks.id);
               </option>
             ))}
           </select>
-          
+          </div>
           <ul>
       {filteredTimeLogs.map((filteredTimeLog) => {
-      const task =  tasks.find((task) => task.id === filteredTimeLog.taskId )
+      const task = tasks.find((task) => task.id === filteredTimeLog.taskId )
       console.log(task)
         return (
-        <li key={filteredTimeLog.id}>
-        {task.name}: {filteredTimeLog.end}  <button onClick={() => deleteTimeLog(filteredTimeLog.id)}>delete</button> 
+        <li className={styles.text} key={filteredTimeLog.id}>
+        {task.name} : <span className={styles.time}>{filteredTimeLog.end} </span> <a className={styles.doneButton} onClick={() => deleteTimeLog(filteredTimeLog.id)}><span>&nbsp;&nbsp;&nbsp;&nbsp;<IoMdDoneAll  /></span></a> 
          
         
            

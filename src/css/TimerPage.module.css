@@ -1,0 +1,64 @@
+
+.timerPageContainer{
+    background-color: #737CCF;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 40% 60%;
+}
+
+.bottomSide a {
+    padding: 5px;
+}
+
+.bottomSide h1 {
+    font-family:serrona ;
+    color: #fff;
+}
+ /* selectform */
+
+ select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    width: 10%;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+    
+  }
+  /* Custom Select wrapper */
+  .select {
+    margin-top: 20px;
+    margin-left: 40px;
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
