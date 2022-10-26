@@ -13,7 +13,7 @@ function Modal2({open, close}) {
     if(!open) return null;
 
   const createTask = async () => {
-    axios.post("http://localhost:3000/tasks", {
+   await axios.post("http://localhost:3000/tasks", {
         name: name,
         projectId: selectedProject,
         id: uuidv4(),

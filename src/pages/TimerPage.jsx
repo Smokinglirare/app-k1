@@ -21,7 +21,7 @@ function TimerPage() {
             let f = moment.utc(diff).format("HH:mm:ss.SSS");
             setDiff(f);
             
-          }, 1000);
+          }, );
           setTimer(timer);
     }
 

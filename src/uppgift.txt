@@ -4,9 +4,9 @@ Se en lista på projekt // klar
 Se en lista på tasks // klar
 Ta bort en task // klar
 Ta bort ett projekt // klar
+Stoppa en tidtagning //
+Ta bort en tidtagning //
+Se en lista på tidtagningar för ett specifikt datum //
 
+Starta en tidtagning för en task // broken
 
-Starta en tidtagning för en task 
-Stoppa en tidtagning
-Ta bort en tidtagning
-Se en lista på tidtagningar för ett specifikt datum

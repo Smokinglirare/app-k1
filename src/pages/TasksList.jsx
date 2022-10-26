@@ -20,7 +20,7 @@ function TasksList() {
  
     useEffect(() => {
       getTasks();
-    }, [createTask] );
+    }, [] );
 
    
 
