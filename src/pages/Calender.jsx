@@ -1,32 +1,37 @@
 import React, {useState, useEffect} from 'react'
 import { useProjectsContext } from '../context/ProjectsContext';
 import moment from "moment";
+import axios from "axios";
 
 function Calender() {
 
-  const { tasks, timeLogs, getTimeLogs } = useProjectsContext();
+  const { tasks, timeLogs, getTimeLogs, getTasks } = useProjectsContext();
   const [selectedDate, setSelectedDate] = useState("")
+
+  const uniqueTaskDate = [...timeLogs.reduce((map, obj) => map.set(moment(obj.start).format("MMM do YY"), obj), new Map()).values()];
+  const filteredTimeLogs = timeLogs.filter((timeLog) => moment(selectedDate).isSame(timeLog.start, "day")  )
+  
+  
+  function deleteTimeLog(id){
+    axios.delete(`http://localhost:3000/timelogs/${id}`)
+    .then(() => {
+      getTimeLogs();
+    })
+  }
 
 
 useEffect(() => {
   getTimeLogs();
 }, []);
 
-const uniqueTaskDate = [...timeLogs.reduce((map, obj) => map.set(moment(obj.start).format("MMM do YY"), obj), new Map()).values()];
 
-console.log(uniqueTaskDate)
+useEffect(() => {
+  getTasks();
+}, []);
 
-{/*
-const timeLogsDate = timeLogs.map((timeLog) => timeLog.taskId);
-const filtered = timeLogsDate.filter(({taskId}, index) => !taskId.includes(taskId, index + 1))
-console.log(filtered)
+const sameId = Object.is(timeLogs.start, tasks.id);
 
-const dateSet = new Set(timeLogsDate);
 
-let myDatesArrayLeveled = Array.from(dateSet);
-
-console.log(timeLogs.id)
-console.log(myDatesArrayLeveled); */}
   return (
     <div>
 
@@ -34,12 +39,24 @@ console.log(myDatesArrayLeveled); */}
 <select  onChange={(e) => setSelectedDate(e.target.value)}>
         <option selected disabled>Dates</option>
             {uniqueTaskDate.map((timeLog) => (
-              <option key={timeLog.id} value={timeLog.taskId}>{moment(timeLog.start).format("MMM Do YY")}
+              <option key={timeLog.id} value={timeLog.start}>{moment(timeLog.start).format("MMM Do YY")}
               </option>
             ))}
           </select>
           
+          <ul>
+      {filteredTimeLogs.map((filteredTimeLog) => {
+      const task =  tasks.find((task) => task.id === filteredTimeLog.taskId )
+      console.log(task)
+        return (
+        <li key={filteredTimeLog.id}>
+        {task.name}: {filteredTimeLog.end}  <button onClick={() => deleteTimeLog(filteredTimeLog.id)}>delete</button> 
          
+        
+           
+        </li>
+      )})}
+      </ul>
 
     </div>
   )

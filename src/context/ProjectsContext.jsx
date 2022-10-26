@@ -27,8 +27,8 @@ export function ProjectsProvider({ children }) {
         setTimeLogs(data)
       }
 
-      const createProject = () => {
-        axios.post("http://localhost:3000/projects", {
+      const createProject = async () => {
+      await axios.post("http://localhost:3000/projects", {
             name: name,
             id: uuidv4(),
         });

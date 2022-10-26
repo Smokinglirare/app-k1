@@ -6,7 +6,7 @@ import TopNav from '../components/TopNav';
 
 function TasksList() {
 
-    const { tasks, getTasks} = useProjectsContext();
+    const { tasks, getTasks, createTask} = useProjectsContext();
     const [openModal, setOpenModal] = useState(false);
 
    
@@ -20,7 +20,7 @@ function TasksList() {
  
     useEffect(() => {
       getTasks();
-    }, );
+    }, [createTask] );
 
    
 

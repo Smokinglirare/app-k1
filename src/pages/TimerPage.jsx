@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import { Timer, Time, TimerOptions } from 'timer-node';
+import React, {useState, useEffect} from 'react'
 import moment from "moment";
 import { useProjectsContext } from '../context/ProjectsContext';
 
@@ -7,7 +6,7 @@ import axios from "axios"
 import { v4 as uuidv4 } from 'uuid';
 
 function TimerPage() {
-    const { tasks } = useProjectsContext();
+    const { tasks, getTasks } = useProjectsContext();
     const [selectedTask, setSelectedTask] = useState("")
     const [startDate, setStartDate] = useState(new Date());
     const [diff, setDiff] = useState("00:00:00");
@@ -31,14 +30,13 @@ function TimerPage() {
             id: uuidv4(),
             taskId: selectedTask,
             start: startDate,
-            end: diff,
-            
+            end: diff, 
         });
       };
-    
-console.log(startDate);
-console.log(selectedTask)
 
+      useEffect(() => {
+        getTasks();
+      }, []);
 
   return (
     <div>
@@ -57,18 +55,11 @@ console.log(selectedTask)
       </button>
       <button onClick={() => {
         createTimer();
-        clearInterval(timer)}}>stop</button>
+        clearInterval(timer)
+        setDiff("00:00:00")
+        setStartDate(new Date());
+        }}>stop</button>
       <p>{diff}</p>
-    {/*  <button className={styles.addButton}
-        onClick={() => {
-          createTask();
-          setName("")
-          setSelectedProject();
-          close()
-        }}
-      >
-        <HiDocumentAdd />
-      </button> */}
     </div>
   )
 }

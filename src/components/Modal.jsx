@@ -27,10 +27,11 @@ function Modal({open, close}) {
       
       
        <button className={styles.addButton}
-        onClick={() => {
-          createProject();
+        onClick={ async () => {
+         await createProject();
           setName("")
           close()
+          await getProjects()
         }}
       >
         <HiDocumentAdd />

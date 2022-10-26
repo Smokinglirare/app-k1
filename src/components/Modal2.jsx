@@ -9,10 +9,10 @@ import { v4 as uuidv4 } from 'uuid';
 function Modal2({open, close}) {
     
     const [selectedProject, setSelectedProject] = useState("")
-    const {   projects, name, setName} = useProjectsContext();
+    const {   projects, name, setName, getTasks} = useProjectsContext();
     if(!open) return null;
 
-  const createTask = () => {
+  const createTask = async () => {
     axios.post("http://localhost:3000/tasks", {
         name: name,
         projectId: selectedProject,
@@ -46,11 +46,12 @@ function Modal2({open, close}) {
       
       
        <button className={styles.addButton}
-        onClick={() => {
-          createTask();
+        onClick={ async () => {
+         await createTask();
           setName("")
           setSelectedProject();
           close()
+          getTasks();
         }}
       >
         <HiDocumentAdd />
