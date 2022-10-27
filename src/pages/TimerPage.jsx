@@ -14,7 +14,7 @@ function TimerPage() {
     const [timer, setTimer] = useState();
 
     const timerFunction = () => {
-      setStartDate(new Date());
+      
           const timer = setInterval(() => {
             let start = moment(startDate);
             let end = moment(new Date());
@@ -26,6 +26,12 @@ function TimerPage() {
           setTimer(timer);
     }
 
+    useEffect(() => {
+      setInterval(() => {
+      setStartDate(new Date());
+    }, 1000)
+    }, [timerFunction])
+
     const createTimer = () => {
         axios.post("http://localhost:3000/timelogs", {
             id: uuidv4(),
@@ -35,10 +41,16 @@ function TimerPage() {
         });
       };
 
+    /*  function startTimer () {
+        if (selectedTask === "") {
+          timerFunction() === null
+        }
+      } */
+
       useEffect(() => {
         getTasks();
       }, []);
-
+     
   return (
     <div className={styles.timerPageContainer}>
       <div className={styles.select}>

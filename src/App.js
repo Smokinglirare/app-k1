@@ -7,6 +7,7 @@ import TasksList from './pages/TasksList';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Calender from './pages/Calender';
 import TimerPage from './pages/TimerPage';
+import TimerPage2 from './pages/TimerPage2';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 <Route path="/tasksList" element={<TasksList />} />
 <Route path="/calender" element={<Calender />} />
 <Route path="/timerPage" element={<TimerPage />} />
+<Route path="/timerPage2" element={<TimerPage2 />} />
     </Routes>
     
       <Navbar />
