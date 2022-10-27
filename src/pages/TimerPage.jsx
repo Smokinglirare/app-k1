@@ -30,7 +30,7 @@ function TimerPage() {
       setInterval(() => {
       setStartDate(new Date());
     }, 1000)
-    }, [timerFunction])
+    }, [])
 
     const createTimer = () => {
         axios.post("http://localhost:3000/timelogs", {
@@ -41,11 +41,7 @@ function TimerPage() {
         });
       };
 
-    /*  function startTimer () {
-        if (selectedTask === "") {
-          timerFunction() === null
-        }
-      } */
+  
 
       useEffect(() => {
         getTasks();
