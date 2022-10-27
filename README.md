@@ -3,7 +3,8 @@
 Kunskapskontroll 1 webbmobilutveckling
 
 ## Paket
-axios : För att fetcha data från JSON server.\
+Create-react-app: För att jag gillar det. \
+Axios : För att fetcha data från JSON server.\
 JSON server: Server.\
 uuid: För att skapa unika IDn för projects, tasks och timelogs. \
 react-router-dom: För att navigera i appen.\
