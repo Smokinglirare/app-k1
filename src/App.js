@@ -2,11 +2,9 @@ import './App.css';
 
 import ProjectsList from './pages/ProjectsList';
 import Navbar from './components/Navbar';
-import Modal from './components/Modal';
 
-import { useState } from "react";
 import TasksList from './pages/TasksList';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Calender from './pages/Calender';
 import TimerPage from './pages/TimerPage';
 

@@ -8,7 +8,7 @@ import {IoMdDoneAll} from "react-icons/io"
 
 function TasksList() {
 
-    const { tasks, getTasks, createTask} = useProjectsContext();
+    const { tasks, getTasks} = useProjectsContext();
     const [openModal, setOpenModal] = useState(false);
 
    
