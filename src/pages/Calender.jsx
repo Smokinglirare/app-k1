@@ -22,6 +22,7 @@ function Calender() {
   }
 
 
+
 useEffect(() => {
   getTimeLogs();
 }, []);
@@ -35,7 +36,9 @@ useEffect(() => {
     <div className={styles.calenderContainer}>
 
 <div className={styles.select}>
-<select  onChange={(e) => setSelectedDate(e.target.value)}>
+<select  
+diasbled={tasks === null}
+onChange={(e) => setSelectedDate(e.target.value)}>
         <option selected disabled>Dates</option>
             {uniqueTaskDate.map((timeLog) => (
               <option key={timeLog.id} value={timeLog.start}>{moment(timeLog.start).format("MMM Do YY")}

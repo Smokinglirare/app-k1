@@ -20,6 +20,7 @@ function Modal2({open, close}) {
     });
   };
 
+
   return (
     <div className={styles.overlay}>
         
@@ -42,6 +43,7 @@ function Modal2({open, close}) {
       
       
        <button className={styles.addButton}
+       disabled={name === "" || selectedProject === "" || selectedProject === "Projects"}
         onClick={ async () => {
          await createTask();
           setName("")

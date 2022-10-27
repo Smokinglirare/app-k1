@@ -52,9 +52,13 @@ function TimerPage() {
           </div>
           <div className={styles.bottomSide}>
           <h1>{diff}</h1>
-    <a onClick={() => {timerFunction()}}>
+    <button 
+    disabled={selectedTask === "" || selectedTask === "Tasks"}
+    onClick={() => {timerFunction()}}
+    
+    >
         <FaPlay />
-      </a>
+      </button>
       <a onClick={() => {
         createTimer();
         clearInterval(timer)

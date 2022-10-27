@@ -1,38 +1,29 @@
 {
   "projects": [
     {
-      "name": "dgfsgsdg",
-      "id": "472bf238-9686-4bbd-b908-3bf88ae745bc"
-    },
-    {
-      "name": "hello",
-      "id": "57e0929d-8253-4e80-8706-ad3a55a347c0"
+      "name": "hej hoppla",
+      "id": "03dff71c-a05e-4007-b0de-86dee32a0b56"
     }
   ],
   "tasks": [
     {
-      "name": "Kul lek",
-      "projectId": "472bf238-9686-4bbd-b908-3bf88ae745bc",
-      "id": "5ee16f41-d12b-4d76-836c-f9d799b628a5"
-    },
-    {
-      "name": "bajbaj",
-      "projectId": "472bf238-9686-4bbd-b908-3bf88ae745bc",
-      "id": "6d24cfb1-8bb7-4bce-aa49-fa9fa0461be6"
+      "name": "dröm",
+      "projectId": "03dff71c-a05e-4007-b0de-86dee32a0b56",
+      "id": "6f44cb4d-a262-409e-b155-4b721682fc9c"
     }
   ],
   "timelogs": [
     {
-      "id": "40d07f9d-9639-4dd7-ade7-d4ec0fd432ea",
-      "taskId": "5ee16f41-d12b-4d76-836c-f9d799b628a5",
-      "start": "2022-10-27T12:47:45.246Z",
-      "end": "00:00:05.615"
+      "id": "636cf81a-2539-41c7-a7b4-4407db92c046",
+      "taskId": "6f44cb4d-a262-409e-b155-4b721682fc9c",
+      "start": "2022-10-27T14:28:34.693Z",
+      "end": "00:00:03.829"
     },
     {
-      "id": "719e11f1-ac53-4edc-912d-6c30158cdb4c",
-      "taskId": "6d24cfb1-8bb7-4bce-aa49-fa9fa0461be6",
-      "start": "2022-10-27T12:48:08.469Z",
-      "end": "00:00:03.954"
+      "id": "a429bac9-08ec-423a-8d10-515dfba6c045",
+      "taskId": "d6176da1-f368-4a34-b23e-301bb282f60c",
+      "start": "2022-10-27T14:28:38.048Z",
+      "end": "00:00:03.522"
     }
   ]
 }

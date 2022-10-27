@@ -27,6 +27,7 @@ function Modal({open, close}) {
       
       
        <button className={styles.addButton}
+       disabled={name === ""}
         onClick={ async () => {
          await createProject();
           setName("")
