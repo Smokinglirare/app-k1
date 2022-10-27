@@ -6,10 +6,10 @@ Kunskapskontroll 1 webbmobilutveckling
 Create-react-app: För att jag gillar det. \
 Axios : För att fetcha data från JSON server.\
 JSON server: Server.\
-uuid: För att skapa unika IDn för projects, tasks och timelogs. \
-react-router-dom: För att navigera i appen.\
-moment: För att bygga klockan.\
-react-icons: För att kunna ha lite ikoner i appen. \
+Uuid: För att skapa unika IDn för projects, tasks och timelogs. \
+React-router-dom: För att navigera i appen.\
+Moment: För att bygga klockan.\
+React-icons: För att kunna ha lite ikoner i appen. \
 
 
 ### `Styling`
