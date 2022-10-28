@@ -37,7 +37,6 @@ useEffect(() => {
 
 <div className={styles.select}>
 <select  
-diasbled={tasks === null}
 onChange={(e) => setSelectedDate(e.target.value)}>
         <option selected disabled>Dates</option>
             {uniqueTaskDate.map((timeLog) => (

@@ -1,6 +1,6 @@
 @font-face {
-    font-family:traveler ;
-    src: local('traveler'), url(../fonts/Traveler.ttf)
+    font-family:maxwell ;
+    src: local('maxwell'), url(../fonts/MAXWELL_SmCps_CND_BK.otf)
 }
 
 
@@ -11,9 +11,9 @@
 }
 
 .tasksList {
-    font-size: 40px;
+    font-size: 30px;
     padding:5px;
-    font-family:traveler;
+    font-family:maxwell;
     color: #fff;
 }
 

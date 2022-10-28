@@ -1,7 +1,9 @@
 @font-face {
-    font-family:traveler ;
-    src: local('traveler'), url(../fonts/Traveler.ttf)
+  font-family:maxwell ;
+  src: local('maxwell'), url(../fonts/MAXWELL_SmCps_CND_BK.otf)
 }
+
+
 
 
 .calenderContainer{
@@ -13,13 +15,13 @@ grid-template-rows: 10% 90%;
 }
  
  .text {
-    font-size: 40px;
+    font-size: 25px;
     padding:5px;
-    font-family:traveler;
+    font-family:maxwell;
     color: #fff;
  }
  .time{
-    font-family:serrona ;
+  font-family:maxwell;
     font-size: 20px;
  }
  
