@@ -1,38 +1,5 @@
 {
-  "projects": [
-    {
-      "name": "Göra klar K1",
-      "id": "d7095dc0-38bd-453a-880b-90ddcbb242e8"
-    },
-    {
-      "name": "Laga mat",
-      "id": "de6b5059-1272-42f8-a6f5-96232bfbb471"
-    }
-  ],
-  "tasks": [
-    {
-      "name": "Klockan funkar!",
-      "projectId": "d7095dc0-38bd-453a-880b-90ddcbb242e8",
-      "id": "28f3ad07-d1a5-4273-9b21-9808994bbf20"
-    },
-    {
-      "name": "Laga god mat",
-      "projectId": "de6b5059-1272-42f8-a6f5-96232bfbb471",
-      "id": "2a65a052-9212-488a-99c3-99029e6e4f77"
-    }
-  ],
-  "timelogs": [
-    {
-      "id": "eb17a2f5-c727-415d-8b96-0c2bab92c81a",
-      "taskId": "28f3ad07-d1a5-4273-9b21-9808994bbf20",
-      "start": "2022-10-27T23:46:24.291Z",
-      "end": "00:02:19.715"
-    },
-    {
-      "id": "e56c0ea1-091e-4154-887e-2f70f8a22938",
-      "taskId": "2a65a052-9212-488a-99c3-99029e6e4f77",
-      "start": "2022-10-27T23:54:23.667Z",
-      "end": "00:06:49.002"
-    }
-  ]
+  "projects": [],
+  "tasks": [],
+  "timelogs": []
 }
